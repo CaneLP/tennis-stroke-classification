@@ -1,0 +1,78 @@
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore environment files
+env/
+venv/
+ENV/
+.venv/
+.env
+
+# Ignore Jupyter Notebook metadata
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+
+
+# Ignore Jupyter Notebook output (e.g., large data files)
+**/output/
+**/outputs/
+**/figures/
+**/*.h5
+**/*.hdf5
+**/*.csv
+**/*.tsv
+**/*.npy
+**/*.npz
+
+# Ignore machine learning model files
+**/*.pkl
+**/*.joblib
+**/*.sav
+**/*.h5
+
+
+# Ignore virtual environments
+.Python
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Ignore VS Code files
+.vscode/
+*.code-workspace
+
+# Ignore Jupyter Lab settings
+.jupyter/lab/
+.jupyter/lab-workspaces/
+
+# Ignore Python IDE files
+.idea/
+*.iml
+
+# Ignore temporary files
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.temp
+
