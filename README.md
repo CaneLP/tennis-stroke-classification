@@ -4,11 +4,11 @@ This project focuses on classifying tennis strokes using a range of machine lear
 
 ## Table of Contents 📃
 
-- [Project Overview](#project-overview)
-- [Dataset](#dataset)
-- [Modeling Techniques and Evaluations](#modeling-techniques-and-evaluations)
-- [Results](#results)
-- [Installation and Usage](#installation-and-usage)
+- [Project Overview](#project-overview-)
+- [Dataset](#dataset-)
+- [Modeling Techniques and Evaluations](#modeling-techniques-and-evaluations-)
+- [Results](#results-)
+- [Installation and Usage](#installation-and-usage-)
 
 ## Project Overview 🔎
 
