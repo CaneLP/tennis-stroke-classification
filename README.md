@@ -85,10 +85,61 @@ Results are only shown for the test set. For a more detailed version, including 
 
 ## Installation and Usage 🛠
 
-To get started, clone the repository and install the required dependencies:
+To get started, follow the steps below to set up your environment and run the necessary scripts.
+
+### 1. Clone the repository
+
+First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/tennis-stroke-classification.git
+git clone https://github.com/CaneLP/tennis-stroke-classification.git
 cd tennis-stroke-classification
-pip install -r requirements.txt # TODO
 ```
+
+### 2. Setup the environment with pipenv
+
+Next, set up the Python 3.8 environment using `pipenv`:
+
+```bash
+pipenv --python 3.8
+```
+
+After the environment is created, install all dependencies specified in the `Pipfile`:
+
+```bash
+pipenv install
+```
+
+### 3. Enter the pipenv shell
+
+Activate the environment by entering the Pipenv shell:
+
+```bash
+pipenv shell
+```
+
+### 4. Download and prepare the dataset
+
+Run the `download_dataset.py` script to download and unpack the necessary datasets. Note that this process may take a few minutes:
+
+```bash
+python download_dataset.py
+```
+
+### 5. Use the Jupyter notebooks
+
+```bash
+jupyter notebook
+```
+
+Once the dataset is prepared, you can start using the Jupyter notebooks located inside the `notebooks/03_model_dev` directory:
+
+### Optional: Play with sample data
+
+If you want to explore some sample data, you can run the `download_samples.py` script:
+
+```bash
+python download_samples.py
+```
+
+After running the script, you can open and interact with the notebooks in the `notebooks/02_dataset_creation` directory. Note that running these notebooks will not actually create the full dataset, as that process is time-consuming and not practical for quick experiments. This is provided just for fun and exploration.
