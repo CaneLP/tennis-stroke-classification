@@ -82,8 +82,7 @@ Results are only shown for the test set. For a more detailed version, including 
 | **CNN (200 epochs)**     | Cleaned  | 0.97     | 0.96      | 0.97   | 0.96             |
 | **CNN (Complex, 200 e)** | Cleaned  | **0.97** | **0.97**  | **0.97** | **0.97**       |
 
-
-## Installation and Usage 🛠️
+## Installation and Usage 🛠
 
 To get started, clone the repository and install the required dependencies:
 
@@ -91,3 +90,4 @@ To get started, clone the repository and install the required dependencies:
 git clone https://github.com/yourusername/tennis-stroke-classification.git
 cd tennis-stroke-classification
 pip install -r requirements.txt # TODO
+```
