@@ -17,6 +17,7 @@ This project implements multiple models, including traditional machine learning 
 ## Dataset 🗃
 
 - **Size:** ~12,000 short video clips (1 second each)
+- - **Relabeling Process:** To make sure the dataset was accurate, we went through all 12,850 video clips from 27 Grand Slam matches and fixed any errors we found. This process took about 20 active hours spread over a few weeks (around 9 minutes for every 100 strokes). It was an important step to build a good dataset for this project. As Andrew Ng mentioned, focusing on data quality is key for AI success ([Fortune article](https://fortune.com/2022/06/21/andrew-ng-data-centric-ai/)).
 - **Classes:** Four types of tennis strokes: forehand, backhand, serve, and an "other" category representing any player behavior not classified as one of the three primary strokes
 - **Structure:** Each video originally contains approximately 23-30 frames, depending on the FPS, but all videos have been resampled to 20 frames for consistency.
 - **Transformation:** These 1-second-long videos were transformed into 20x12 images with 3 channels (RGB) using pose estimation methods. Specifically, Ultralyics' model was utilized ([Ultralytics GitHub](https://github.com/ultralytics/ultralytics)). In this transformation:
