@@ -9,6 +9,7 @@ This project focuses on classifying tennis strokes using a range of machine lear
 - [Modeling Techniques and Evaluations](#modeling-techniques-and-evaluations-)
 - [Results](#results-)
 - [Installation and Usage](#installation-and-usage-)
+- [Important Tips](#important-tips-)
 
 ## Project Overview 🔎
 
@@ -162,3 +163,25 @@ To use the correct environment in Jupyter notebook:
   **Select the Kernel**:
    - In Jupyter, go to `Kernel > Change Kernel` and choose "Tennis AI".
 
+## Important Tips 💡
+
+1. **Data sampling for faster testing**: In each notebook (except for those using CNNs), there's a specific cell dedicated to data loading. You can adjust the number of examples to speed up model testing. Even with just 500 examples, you can achieve meaningful results. Simply uncomment and run the provided cell with your desired `num_examples` value. **Note:** After running one sampling, you must reload the data from the start to ensure proper functionality.
+
+```python
+# Uncomment and run this cell with the desired num_examples count
+# if you'd like to work with less data for testing purposes
+
+num_examples = 500
+X_sampled, _, y_sampled, _ = train_test_split(X, y, train_size=num_examples, stratify=y, random_state=42)
+X = X_sampled
+y = y_sampled
+
+bh_cnt = sum([1 for l in y if l == 'backhand'])
+fh_cnt = sum([1 for l in y if l == 'forehand'])
+other_cnt = sum([1 for l in y if l == 'other'])
+serve_cnt = sum([1 for l in y if l == 'serve'])
+print(f'Backhands count: {bh_cnt}, Forehands count: {fh_cnt}, Other count: {other_cnt}, Serve count: {serve_cnt}')
+print(f'All strokes count: {len(y)}')
+```
+
+2. **Optimizing processing speed with `n_jobs`**: The `n_jobs` parameter is currently commented out, but you can uncomment it to speed up computations. Set it to `-1` to utilize all available processing power, or experiment with specific values. Start with lower numbers, as setting it too high (e.g., 20+) can overwhelm your computer.
