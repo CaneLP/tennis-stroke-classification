@@ -118,7 +118,7 @@ Activate the environment by entering the Pipenv shell:
 pipenv shell
 ```
 
-### 4. Download and prepare the dataset
+### 4. Download and prepare the dataset, sample files and models
 
 Run the `download_dataset.py` script to download and unpack the necessary datasets. Note that this process may take a few minutes:
 
@@ -126,15 +126,7 @@ Run the `download_dataset.py` script to download and unpack the necessary datase
 python download_dataset.py
 ```
 
-### 5. Use the Jupyter notebooks
-
-```bash
-jupyter notebook
-```
-
 Once the dataset is prepared, you can start using the Jupyter notebooks located inside the `notebooks/03_model_dev` directory:
-
-### Optional: Play with sample data
 
 If you want to explore some sample data, you can run the `download_samples.py` script:
 
@@ -142,4 +134,16 @@ If you want to explore some sample data, you can run the `download_samples.py` s
 python download_samples.py
 ```
 
-After running the script, you can open and interact with the notebooks in the `notebooks/02_dataset_creation` directory. Note that running these notebooks will not actually create the full dataset, as that process is time-consuming and not practical for quick experiments. This is provided just for fun and exploration.
+After running this script, you can open and interact with the notebooks in the `notebooks/02_dataset_creation` directory. Note that running these notebooks will not actually create the full dataset, as that process is time-consuming and not practical for quick experiments. This is provided just for fun and exploration.
+
+To download the pre-trained models, run the `download_models.py` script:
+
+```bash
+python download_models.py
+```
+
+### 5. Use the Jupyter notebooks
+
+```bash
+jupyter notebook
+```
