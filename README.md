@@ -104,11 +104,15 @@ Next, set up the Python 3.8 environment using `pipenv`:
 pipenv --python 3.8
 ```
 
+**Note:** While other Python versions `>3.8` should work, this project is developed and tested with 3.8.
+
 After the environment is created, install all dependencies specified in the `Pipfile`:
 
 ```bash
 pipenv install
 ```
+
+**Installation may take around 20-25 minutes and requires approximately 9GB of memory due to the extensive dependencies of the Ultralytics library.**
 
 ### 3. Enter the pipenv shell
 
@@ -141,9 +145,20 @@ To download the pre-trained models, run the `download_models.py` script:
 ```bash
 python download_models.py
 ```
+2. **Start Jupyter Notebook**:
 
-### 5. Use the Jupyter notebooks
+To use the correct environment in Jupyter notebook:
 
-```bash
-jupyter notebook
-```
+  **Add the Kernel**:
+   ```bash
+   pipenv shell  # if not already inside the environment
+   python -m ipykernel install --user --name=tennisai --display-name "Tennis AI"
+   ```
+
+   ```bash
+   jupyter notebook
+   ```
+
+  **Select the Kernel**:
+   - In Jupyter, go to `Kernel > Change Kernel` and choose "Tennis AI".
+
