@@ -32,6 +32,6 @@ if __name__ == "__main__":
         os.makedirs(models_folder)
         print(f"Created directory: {models_folder}")
 
-    file_id_models = "1ko6cVjfozD770V8essUm2lXxN8ZZu5an"
+    file_id_models = "1P4tvOo5K3HGCOAcX1XnO2rygrkO7bpTT"
     output_folder_models = models_folder
     download_and_unpack_zip(file_id_models, output_folder_models, "models.zip")
