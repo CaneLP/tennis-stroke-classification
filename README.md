@@ -18,7 +18,7 @@ This project implements multiple models, including traditional machine learning 
 ## Dataset 🗃
 
 - **Size:** ~12,000 short video clips (1 second each)
-- - **Relabeling Process:** To make sure the dataset was accurate, we went through all 12,850 video clips from 27 Grand Slam matches and fixed any errors we found. This process took about 20 active hours spread over a few weeks (around 9 minutes for every 100 strokes). It was an important step to build a good dataset for this project. As Andrew Ng mentioned, focusing on data quality is key for AI success ([Fortune article](https://fortune.com/2022/06/21/andrew-ng-data-centric-ai/)).
+- **Relabeling Process:** To make sure the dataset was accurate, we went through all 12,850 video clips from 27 Grand Slam matches and fixed any errors we found. This process took about 20 active hours spread over a few weeks (around 9 minutes for every 100 strokes). It was an important step to build a good dataset for this project. As Andrew Ng mentioned, focusing on data quality is key for AI success ([Fortune article](https://fortune.com/2022/06/21/andrew-ng-data-centric-ai/)).
 - **Classes:** Four types of tennis strokes: forehand, backhand, serve, and an "other" category representing any player behavior not classified as one of the three primary strokes
 - **Structure:** Each video originally contains approximately 23-30 frames, depending on the FPS, but all videos have been resampled to 20 frames for consistency.
 - **Transformation:** These 1-second-long videos were transformed into 20x12 images with 3 channels (RGB) using pose estimation methods. Specifically, Ultralyics' model was utilized ([Ultralytics GitHub](https://github.com/ultralytics/ultralytics)). In this transformation:
@@ -37,7 +37,7 @@ This project implements multiple models, including traditional machine learning 
     - 15: Left Ankle
     - 16: Right Ankle
 
-  This process of turning videos into 'action images' is based on the approach described in [this paper](https://arxiv.org/pdf/1704.05645.pdf).
+  This process of turning videos into 'action images' is based on the approach described in [this paper](https://arxiv.org/pdf/1704.05645.pdf). Note that the red and green channels in the image represent the x and y coordinates of the keypoints, while the blue channel represents the confidence level of those keypoints.
 
 ## Modeling Techniques and Evaluations 🤖
 
@@ -64,7 +64,7 @@ The results, full process, and detailed analysis of the models are available in 
   - **Datasets:** Initial, Cleaned
   - **Description:** The CNN model did a great job at generalizing, which means it worked well not only on the data it was trained on but also on new, unseen data. The results on the test set were very close to those on the training and validation sets, showing that the model didn't overfit and could make accurate predictions on new data. This was different from the other models, which, even though they did well during training and validation, often performed worse on the test set. While those models still gave good results, the CNN was especially impressive because it kept its performance steady across all datasets. This made the CNN a very reliable choice for this classification task.
 
-Additionally, we developed a more complex CNN model with some extra layers and dropout, and trained it for 200 epochs. This more advanced model gave the most consistent results across the training, validation, and test sets, showing it could generalize maybe even better than the initial model (also trained on 200 epochs).
+Additionally, we developed a more complex CNN model with extra layers and dropout, training it for 100 epochs. This advanced model showed more consistent results across the training, validation, and test sets, indicating better generalization compared to the initial model, which was also trained for 100 epochs. However, all the CNN models produced fairly similar overall results.
 
 ## Results 🚀
 
@@ -72,17 +72,17 @@ Results are only shown for the test set. For a more detailed version, including 
 
 | Model                   | Dataset  | Accuracy | Precision | Recall | F1 Score (macro) |
 |--------------------------|----------|----------|-----------|--------|------------------|
-| **Logistic Regression**  | Initial  | 0.78     | 0.76      | 0.74   | 0.75             |
-| **Logistic Regression**  | Cleaned  | 0.90     | 0.89      | 0.88   | 0.89             |
-| **SVM**                  | Initial  | 0.83     | 0.82      | 0.81   | 0.81             |
-| **SVM**                  | Cleaned  | 0.95     | 0.94      | 0.94   | 0.94             |
-| **Boosting**             | Initial  | 0.82     | 0.81      | 0.79   | 0.80             |
-| **MLP**                  | Initial  | 0.81     | 0.79      | 0.79   | 0.79             |
-| **MLP**                  | Cleaned  | 0.95     | 0.94      | 0.93   | 0.93             |
-| **CNN (50 epochs)**      | Initial  | 0.85     | 0.85      | 0.84   | 0.84             |
-| **CNN (50 epochs)**      | Cleaned  | 0.96     | 0.95      | 0.96   | 0.96             |
-| **CNN (200 epochs)**     | Cleaned  | 0.97     | 0.96      | 0.97   | 0.96             |
-| **CNN (Complex, 200 e)** | Cleaned  | **0.97** | **0.97**  | **0.97** | **0.97**       |
+| **Logistic Regression**  | Initial  | 0.78     | 0.77      | 0.75   | 0.76             |
+| **Logistic Regression**  | Cleaned  | 0.91     | 0.90      | 0.88   | 0.89             |
+| **SVM**                  | Initial  | 0.84     | 0.83      | 0.82   | 0.82             |
+| **SVM**                  | Cleaned  | 0.94     | 0.93      | 0.92   | 0.92             |
+| **Boosting**             | Initial  | 0.83     | 0.83      | 0.80   | 0.81             |
+| **MLP**                  | Initial  | 0.82     | 0.82      | 0.79   | 0.80             |
+| **MLP**                  | Cleaned  | 0.92     | 0.90      | 0.90   | 0.90             |
+| **CNN (50 epochs)**      | Initial  | 0.85     | 0.85      | 0.84   | 0.85             |
+| **CNN (50 epochs)**      | Cleaned  | 0.96     | 0.96      | 0.96   | 0.96             |
+| **CNN (100 epochs)**     | Cleaned  | 0.96     | 0.96      | 0.96   | 0.96             |
+| **CNN (Complex, 100 e)** | Cleaned  | **0.97** | **0.96**  | **0.96** | **0.96**       |
 
 ## Installation and Usage 🛠
 
