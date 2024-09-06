@@ -2,6 +2,8 @@
 
 This project focuses on classifying tennis strokes using a range of machine learning and deep learning models. The dataset consists of short video clips, each lasting 1 second, which have been manually relabeled to enhance model performance. Initially, the videos were obtained through an automated pipeline employing machine learning models, though the specifics of that process are beyond the scope of this project. The primary objective here is to evaluate different models to determine the most effective approach for tennis stroke classification.
 
+**For a hands-on experience, you can check out the demo notebook included in this project [notebooks/01_demo/](notebooks/01_demo/). It guides you through all the models we've developed, like Logistic Regression, SVM, Boosting, MLP, and CNNs, and helps you see the process and results step by step. Before you start with the demo, though, make sure to follow the installation and usage instructions provided below to set up your environment correctly.**
+
 ## Table of Contents 📃
 
 - [Project Overview](#project-overview-)
@@ -75,7 +77,7 @@ Results are only shown for the test set. For a more detailed version, including 
 | **Logistic Regression**  | Initial  | 0.78     | 0.77      | 0.75   | 0.76             |
 | **Logistic Regression**  | Cleaned  | 0.91     | 0.90      | 0.88   | 0.89             |
 | **SVM**                  | Initial  | 0.84     | 0.83      | 0.82   | 0.82             |
-| **SVM**                  | Cleaned  | 0.94     | 0.93      | 0.92   | 0.92             |
+| **SVM**                  | Cleaned  | 0.93     | 0.92      | 0.91   | 0.92             |
 | **Boosting**             | Initial  | 0.83     | 0.83      | 0.80   | 0.81             |
 | **MLP**                  | Initial  | 0.82     | 0.82      | 0.79   | 0.80             |
 | **MLP**                  | Cleaned  | 0.92     | 0.90      | 0.90   | 0.90             |
